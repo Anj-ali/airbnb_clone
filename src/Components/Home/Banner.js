@@ -1,12 +1,17 @@
 import { Button } from '@material-ui/core';
-import React from 'react';
+import React, {useState} from 'react';
+import Search from "./Search"
 import "./Banner.css";
 
 const Banner = () => {
+    const [showSearch, setShowSearch] = useState(false);
     return (
         <div className='banner'>
+            {showSearch &&  <Search/>}
             <div className="banner-search">
-                <Button className = "banner-searchButton" variant='outlined'>Search Dates</Button>
+                <Button onClick = {() =>{
+                    setShowSearch(!showSearch)
+                }} className = "banner-searchButton" variant='outlined'>{showSearch ? "Hide":"Search Dates"}</Button>
             </div>
             <div className = "banner-info">
                 <h1>Get out and strech your imagination</h1>
@@ -16,5 +21,5 @@ const Banner = () => {
         </div>
     );
 };
-
+ 
 export default Banner;
