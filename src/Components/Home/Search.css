@@ -25,7 +25,6 @@ search > input{
     height: 30px;
     top: 420px;
     border: none;
-    color: black;
 }
 
 .search> input:focus{
